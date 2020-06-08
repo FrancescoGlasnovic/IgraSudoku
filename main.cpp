@@ -24,8 +24,8 @@ void igra(void);
 void poc(void);
 void ispisi()
 {
-    cout <<endl<< "STUPCI --> 0  1  2  3  4  5  6  7  8";
-    printf ("\n-----------------------------\n");
+    cout << endl << "ST --> 0  1  2  3  4  5  6  7  8";
+    printf ("\n---------------------------------\n");
        for(p=0;p<9;p++)
         {
             for(q=0;q<9;q++)
@@ -75,7 +75,7 @@ void ispisi()
             }
             if (p==2||p==5||p==8)
             {
-            printf ("\n-----------------------------");
+            printf ("\n---------------------------------");
             }
             printf("\n");
         }
@@ -190,17 +190,23 @@ void pomoc()
 {
     system("cls");
     cout << "     " << "** PRAVILA I UPUTE **" << "     ";
-    cout << "Pozdrav " << ime << " ,dobrodosli u Sudoku pomoc. Iako ste novi u Sudoku, mozete ga nauciti ispocetka ovdje." << endl;
-    cout << "Sudoku je vrsta matematicke zagonetke čije je rješavanje temeljeno na logici. ";
-    cout << "Sastoji se od jednog velikog kvadratnog polja, podijeljenog na 81 manjih kvadratica. ";
-    cout << "Nadalje, unutar velikog kvadrata, oznaceno je 9 odjeljaka velikih 3x3 polja. ";
-    cout << "Postoje razlicite tezine te igre, a koristi se za zabavu ili testiranje inteligencije. ";
-    cout << "Polje ce sadrzavati odredene brojeve koji su prethodno generirani i sluziti ce kao pomoc u igri. Potrebno je popuniti cijelo polje ";
-    cout << " brojevima od 1 do 9, s time da se svaki broj smije pojaviti tocno 9 puta. No, jedan broj smije pojaviti samo jednom u svakom retku, svakom stupcu i svakom odjeljku od 3x3 polja. " << endl;
-    cout << "Stoga, " << ime << " , morate popuniti cijelo 9x9 polje sa 81 brojem bez krsenja ovih pravila.";
-    cout << "Također, " << ime << " , morati cete pogledati lokaciju celije i upisati broj tj. njezine koordinate." << endl;
+    cout << endl;
+    cout << "Pozdrav " << ime << ", dobrodosli u Sudoku pomoc. " << endl << "Iako ste novi u Sudoku, mozete ga nauciti ovdje." << endl;
+    cout << "Sudoku je vrsta matematicke zagonetke cije je rjesavanje temeljeno na logici. " << endl;
+    cout << "Sastoji se od jednog velikog kvadratnog polja, podijeljenog na 81 manjih kvadratica. " << endl;
+    cout << "Nadalje, unutar velikog kvadrata, oznaceno je 9 odjeljaka velikih 3x3 polja. " << endl;
+    cout << "Postoje razlicite tezine te igre, a koristi se za zabavu ili testiranje inteligencije. " << endl;
+    cout << "Polje ce sadrzavati odredene brojeve koji su prethodno generirani i sluziti ce kao pomoc u igri." << endl;
+    cout << "Potrebno je popuniti cijelo polje brojevima od 1 do 9, s time da se svaki broj smije pojaviti tocno 9 puta." << endl << "No, jedan broj smije pojaviti samo jednom u svakom retku, svakom stupcu i svakom odjeljku od 3x3 polja. " << endl;
+    cout << endl;
+    cout << "Stoga, " << ime << ", morate popuniti cijelo 9x9 polje sa 81 brojem bez krsenja ovih pravila." << endl;
+    cout << "Takoder, " << ime << ", morati cete pogledati lokaciju celije i upisati broj tj. njezine koordinate." << endl;
     cout << "Naprimjer, 0 2 ili 3 4 itd." << endl;
-    cout << "Dostupno je 5 razina prema slozenosti polja. Prema razinama, za svaki tocan odgovor dobivate odredeni broj bodova: ";
+    cout << endl;
+    cout << "Ako ste shvatili upute, pritisnite bilokoju tipku: ";
+    getch();
+    system("cls");
+    cout << "Dostupno je 5 razina prema slozenosti polja. Prema razinama, za svaki tocan odgovor dobivate odredeni broj bodova: " << endl;
     cout << "Pocetnicka razina - 1 bod "  << endl << "Laka razina - 2 boda " << endl << "Srednja razina - 3 boda " << endl << "Teska razina - 4 boda " << endl << "Profesionalna razina - 5 bodova " << endl;
     cout << "Ovo su sva pravila koja su Vam potrebna prije pocetka igranja. Uzivajte u igri Sudoku, sigurni smo da cete se zabaviti. " << endl;
     cout << "Pritisnite bilokoju tipku kako biste vidjeli primjer kako Sudoku izgleda: ";
@@ -235,22 +241,25 @@ void igra()
     brpomoc = 0;
     generator();
     cout << "*** DOBRODOSLI U NEOGRANICEN SUDOKU SVIJET ***" << endl;
+    cout << endl;
     cout << "*** IZBORNIK ***" << endl;
     cout << "1. IGRAJTE SUDOKU " << endl;
     cout << "2. NAUCITE IGRATI SUDOKU " << endl;
     cout << "3. IZLAZ " << endl;
-    cout << "MOLIM VAS " << ime << "UNESITE SVOJ ODABIR" << endl;
+    cout << endl;
+    cout << "Molimo Vas, " << ime << " unesite svoj odabir (1-3)." << endl;
     cin >> odabir;
 
     switch(odabir)
     {
     case 1: cout << "*** DOSTUPNE RAZINE *** " << endl;
-        cout << "POCETNICKA RAZINA " << endl;
-        cout << "LAKA RAZINA " << endl;
-        cout << "SREDNJA RAZINA " << endl;
-        cout << "TESKA RAZINA " << endl;
-        cout << "PROFESIONALNA RAZINA " << endl;
-        cout << ime << ", UNESITE SVOJ ODABIR" << endl;
+        cout << "1. POCETNICKA RAZINA " << endl;
+        cout << "2. LAKA RAZINA " << endl;
+        cout << "3. SREDNJA RAZINA " << endl;
+        cout << "4. TESKA RAZINA " << endl;
+        cout << "5. PROFESIONALNA RAZINA " << endl;
+        cout << endl;
+        cout << ime << ", unesite svoj odabir (1-5)." << endl;
         cin >> razina;
         switch(razina)
         {
@@ -354,7 +363,7 @@ void poc()
   {
   gen = 0;
   hint = -1;
-  cout << ime << ", unesite polozaj celije (stupac redak). " << endl << "Unesite 10 10 kako biste podnijeli svoj Sudoku napredak. Kada podnesete svoj napredak, prikazat ce Vam se riješena Sudoku tablica. " << endl;
+  cout << ime << ", unesite polozaj celije (stupac redak). " << endl << "Kada smatrate da ste gotovi, unesite 10 10 kako biste podnijeli svoj Sudoku napredak." << endl << "Kada podnesete svoj napredak, prikazat ce Vam se rijesena Sudoku tablica. " << endl;
   cin >> i >> j;
   if(i <= 8 && j <= 8)
   {
@@ -379,7 +388,7 @@ void poc()
   v[brojac] = i;
   w[brojac] = j;
   brojac++;
-  cout << "Ako zelite pomoc, upisite 0, inače upisite 1. " << endl;
+  cout << "Za pomoc, upisite 0, inace upisite 1. " << endl;
   cin >> hint;
 
   if(hint == 0)
@@ -441,26 +450,30 @@ void pauzavr()
     {
     system("cls");
     cout << "Ovo bi moglo potrajati. Molim Vas ne izlazite! " << endl;
+    cout << endl;
     cout << "GENERIRANJE IGRE SUDOKU PO VASEM ZAHTJEVU...     ";
-    cout << ++l << "%% GENERIRANO";
+    cout << ++l << "% GENERIRANO";
     for(vr1=0;vr1<250000;vr1++)
         ;
     system("cls");
     cout << "Ovo bi moglo potrajati. Molim Vas ne izlazite! " << endl;
+    cout << endl;
     cout << "GENERIRANJE IGRE SUDOKU PO VASEM ZAHTJEVU...     ";
-    cout << ++l << "%% GENERIRANO";
+    cout << ++l << "% GENERIRANO";
     for(vr1=0; vr1<250000; vr1++)
         ;
     system("cls");
     cout << "Ovo bi moglo potrajati. Molim Vas ne izlazite! " << endl;
+    cout << endl;
     cout << "GENERIRANJE IGRE SUDOKU PO VASEM ZAHTJEVU...     ";
-    cout << ++l << "%% GENERIRANO";
+    cout << ++l << "% GENERIRANO";
     for(vr1=0; vr1<250000; vr1++)
         ;
     system("cls");
     cout << "Ovo bi moglo potrajati. Molim Vas ne izlazite! " << endl;
+    cout << endl;
     cout << "GENERIRANJE IGRE SUDOKU PO VASEM ZAHTJEVU...     ";
-    cout << ++l << "%% GENERIRANO";
+    cout << ++l << "% GENERIRANO";
     for(vr1=0; vr1<250000; vr1++)
         ;
     }
@@ -489,8 +502,8 @@ if(razina == 1)
     cout << "Odabrana Sudoku razina: POCETNICKA " << endl;
     cout << "Broj praznih celija koje ste trebali popuniti: 40" << endl;
     cout << "Broj praznih celija koje ste ispravno popunili: " << bodovi << endl;
-   if(bodovi > 30)
-     cout << ime << ", dobro ste igrali! " << endl;
+    if(bodovi > 30)
+       cout << ime << ", dobro ste igrali! " << endl;
    }
 else if(razina == 2)
  {
@@ -553,6 +566,7 @@ for(ctr1=0; ctr1<9; ctr1++)
    }
 }
 }
+
 int main()
 {
   srand(time(NULL));
